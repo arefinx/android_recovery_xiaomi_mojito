@@ -39,8 +39,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export LC_ALL="C"
 	export ALLOW_MISSING_DEPENDENCIES=true
 	export TARGET_DEVICE_ALT="sunny"
-	export OF_TARGET_DEVICES="mojito,sunny"
-	export OF_VIRTUAL_AB_DEVICE=1
+	export FOX_TARGET_DEVICES="mojito,sunny"
+	export FOX_VIRTUAL_AB_DEVICE=1
 	export FOX_RECOVERY_SYSTEM_PARTITION="/dev/block/mapper/system"
 	export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/mapper/vendor"
 	export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
@@ -57,15 +57,16 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_DELETE_AROMAFM=1
 	export FOX_BUGGED_AOSP_ARB_WORKAROUND="1616300800"; # Sun 21 Mar 04:26:40 GMT 2021
 	export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk.zip
+        export FOX_VENDOR_BOOT_RECOVERY=1
 
 	# Ensure that /sdcard is bind-unmounted before f2fs data repair or format
 	export OF_UNBIND_SDCARD_F2FS=1
 
 	# Instruct magiskboot v24+ to always patch the vbmeta header when patching the recovery/boot image; do *not* remove!
-        export OF_PATCH_VBMETA_FLAG="1"
+        export FOX_PATCH_VBMETA_FLAG="1"
 
 	# No special MIUI stuff
-        export OF_VANILLA_BUILD=1
+        export FOX_VANILLA_BUILD=1
 	export OF_NO_MIUI_PATCH_WARNING=1
 
 	# Full Dynamic Partition size
@@ -79,8 +80,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_CLOCK_POS=1
 	export OF_HIDE_NOTCH=1
 	export OF_ALLOW_DISABLE_NAVBAR=0
-	
-	# R11.1 Settings
+
+	# R12.1 Settings
 	export FOX_VERSION="R12.1"
 	export FOX_BUILD_TYPE="Beta"
 	export OF_MAINTAINER="Arefin"
