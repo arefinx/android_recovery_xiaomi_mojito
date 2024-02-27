@@ -56,7 +56,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_UNBIND_SDCARD_F2FS=1
 
 	# Instruct magiskboot v24+ to always patch the vbmeta header when patching the recovery/boot image; do *not* remove!
-        export OF_PATCH_VBMETA_FLAG="1"
+        export FOX_PATCH_VBMETA_FLAG="1"
 
 	# No special MIUI stuff
 	export OF_NO_MIUI_PATCH_WARNING=1
